@@ -183,8 +183,10 @@ namespace Bing.Datas.EntityFramework.Core
                 CoreEventId.SensitiveDataLoggingEnabledWarning,
                 CoreEventId.ContextInitialized,
                 CoreEventId.ContextDisposed,
+#if NETSTANDARD2_0
                 CoreEventId.QueryModelCompiling,
                 CoreEventId.QueryModelOptimized,
+#endif
                 CoreEventId.QueryExecutionPlanned,
                 CoreEventId.StartedTracking,
                 CoreEventId.DetectChangesStarting,

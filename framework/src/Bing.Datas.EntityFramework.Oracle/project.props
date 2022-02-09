@@ -1,5 +1,9 @@
 ﻿<Project>
   <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <AssemblyName>Bing.Datas.EntityFramework.Oracle</AssemblyName>
     <PackageId>Bing.Datas.EntityFramework.Oracle</PackageId>
     <Description>Bing.Datas.EntityFramework.Oracle 是Bing应用框架的EntityFrameworkCore.Oracle数据访问类库。</Description>

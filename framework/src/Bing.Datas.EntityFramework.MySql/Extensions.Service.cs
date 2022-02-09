@@ -27,7 +27,14 @@ namespace Bing.Datas.EntityFramework.MySql
             where TService : class, IUnitOfWork
             where TImplementation : UnitOfWorkBase, TService
         {
-            return services.AddUnitOfWork<TService, TImplementation>(builder => { builder.UseMySql(connection); },
+            return services.AddUnitOfWork<TService, TImplementation>(builder =>
+                {
+#if NETSTANDARD2_0
+                    builder.UseMySql(connection);
+#elif NETSTANDARD2_1
+                    builder.UseMySql(connection, ServerVersion.AutoDetect(connection));
+#endif
+                },
                 config => config.LogLevel = level);
         }
 
@@ -44,7 +51,14 @@ namespace Bing.Datas.EntityFramework.MySql
             where TService : class, IUnitOfWork
             where TImplementation : UnitOfWorkBase, TService
         {
-            return services.AddUnitOfWork<TService, TImplementation>(builder => { builder.UseMySql(connection); },
+            return services.AddUnitOfWork<TService, TImplementation>(builder =>
+                {
+#if NETSTANDARD2_0
+                    builder.UseMySql(connection);
+#elif NETSTANDARD2_1
+                    builder.UseMySql(connection, ServerVersion.AutoDetect(connection));
+#endif
+                },
                 dataConfigAction);
         }
 
@@ -61,7 +75,14 @@ namespace Bing.Datas.EntityFramework.MySql
             where TService : class, IUnitOfWork
             where TImplementation : UnitOfWorkBase, TService
         {
-            return services.AddUnitOfWork<TService, TImplementation>(builder => { builder.UseMySql(connection); }, null,
+            return services.AddUnitOfWork<TService, TImplementation>(builder =>
+                {
+#if NETSTANDARD2_0
+                    builder.UseMySql(connection);
+#elif NETSTANDARD2_1
+                    builder.UseMySql(connection, ServerVersion.AutoDetect(connection));
+#endif
+                }, null,
                 configuration);
         }
     }

@@ -1,5 +1,9 @@
 ﻿<Project>
   <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <AssemblyName>Bing.Events</AssemblyName>
     <PackageId>Bing.Events</PackageId>
     <Description>Bing.Events是Bing应用框架的事件总线操作类库。</Description>

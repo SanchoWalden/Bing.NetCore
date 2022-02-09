@@ -1,5 +1,9 @@
 ﻿<Project>
   <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <AssemblyName>Bing.Datas.EntityFramework.MySql</AssemblyName>
     <PackageId>Bing.Datas.EntityFramework.MySql</PackageId>
     <Description>Bing.Datas.EntityFramework.MySql 是Bing应用框架的EntityFrameworkCore.MySql数据访问类库。</Description>
