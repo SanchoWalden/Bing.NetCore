@@ -6,7 +6,7 @@ namespace Bing.DependencyInjection
     /// 对象访问器
     /// </summary>
     /// <typeparam name="T">类型</typeparam>
-    [Ignore]
+    //[Ignore]
     public interface IObjectAccessor<out T>
     {
         /// <summary>
