@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Bing.Core.Modularity;
 using Bing.Extensions;
+using Bing.Modularity;
 using Bing.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -98,7 +99,8 @@ namespace Bing.Core.Builders
             _modules.AddIfNotContains(module);
 
             // 添加依赖模块
-            var dependTypes = module.GetDependModuleTypes();
+            //var dependTypes = module.GetDependModuleTypes();
+            var dependTypes = BingModuleHelper.FindDependedModuleTypes(type);
             foreach (var dependType in dependTypes)
             {
                 var dependModule = _sourceModules.Find(m => m.GetType() == dependType);
