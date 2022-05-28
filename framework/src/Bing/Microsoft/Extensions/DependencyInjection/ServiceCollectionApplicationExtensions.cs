@@ -1,6 +1,7 @@
 ﻿using Bing;
 using Bing.Core.Builders;
 using Bing.Helpers;
+using Bing.Internal;
 using Bing.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -28,6 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
             var builder = services.GetSingletonInstanceOrNull<IBingBuilder>() ?? new BingBuilder(services);
             services.TryAddSingleton<IBingBuilder>(builder);
 
+            services.AddCoreServices();
             builder.AddCoreModule();
             BingLoader.RegisterTypes(services);
             return builder;

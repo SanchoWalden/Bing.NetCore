@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Bing.Logging;
+using Microsoft.Extensions.Logging;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -89,5 +90,12 @@ namespace Microsoft.Extensions.DependencyInjection
             logger.LogInformation(message, logName);
             return services;
         }
+
+        /// <summary>
+        /// 获取初始化日志
+        /// </summary>
+        /// <typeparam name="T">类型</typeparam>
+        /// <param name="services">服务集合</param>
+        public static ILogger<T> GetInitLogger<T>(this IServiceCollection services) => services.GetSingletonInstance<IInitLoggerFactory>().Create<T>();
     }
 }
